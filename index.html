@@ -9,9 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel ="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
+        
         <ul class="header-list">
             <li class="header-item">
                 LOGO
@@ -19,10 +23,15 @@
             <li class="header-item">
                 <div class="wrapper">
                     <i class="fas fa-search"></i>
-                    <input type = "text" placeholder="Search by city">
-                    <i class="fa fa-times"></i>
+                    <input type = "text" placeholder="Search by city or click on geolocation">
+                    <i  class="fa fa-times"></i>
                 </div>
                 
+            </li>
+            <li class="header-item">
+                <button type="button" value="Submit" id="submitButton" />
+                <i class="fas fa-location-arrow"></i>
+                </button>
             </li>
             <li class="header-item">
                 <div class="center">
@@ -40,6 +49,94 @@
             </li>
         </ul>
     </header>
+    
+    <main>
+        <!--- LEFT SECTION--> 
+        <div class="card weather-info">
+            <div class="weather-info__description">
+                Few Clouds  
+            </div>
+            <div class="weather-info__city">
+                Gdynia
+            </div>
+            <div class="weather-info__date">
+                Sunday, 15th May 2021
+            </div>
+            <div class="weather-info__time">
+                14:05 am
+            </div>
+            <div class="weather-info__temperature">
+                12 C
+            </div>
+
+            <div class="weather-icon">
+                <img src="icons/unknown.png">
+            </div>
+        </div>
+       
+        
+        <!--- RIGHT SECTION--> 
+        <div class="card weather-detailed-info">
+            <div class="weather-details">
+                <div class="weather-details__icon">
+                    <i style="font-size: 2em;" class="fas fa-temperature-low"></i>
+                </div>
+                <div class="weather-details__info">
+                    <div class="weather-details__label">
+                        Feels Like
+                    </div>
+                    <div class="weather-details__data" id="feels-like">
+                        12 C
+                    </div>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="weather-details__icon">
+                    <img style="width: 32px; height: 32px;" src="img/humidity.svg" alt="humidity">
+                </div>
+                <div class="weather-details__info">
+                    <div class="weather-details__label">
+                        Humidity
+                    </div>
+                    <div class="weather-details__data" id="humidity">
+                        93%
+                    </div>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="weather-details__icon">
+                    <i style="font-size: 2em;" class="fas fa-cloud-rain"></i>
+                </div>
+                <div class="weather-details__info">
+                    <div class="weather-details__label">
+                        Chance of Rain
+                    </div>
+                    <div class="weather-details__data" id="chance-of-rain">
+                        0%
+                    </div>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="weather-details__icon">
+                    <i style="font-size: 2em;" class="fas fa-wind"></i>
+                </div>
+                <div class="weather-details__info">
+                    <div class="weather-details__label">
+                        Wind Speed
+                    </div>
+                    <div class="weather-details__data" id="feels-like">
+                        10 k
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="forecast">
+        
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
