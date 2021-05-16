@@ -22,14 +22,14 @@
             </li>
             <li class="header-item">
                 <div class="wrapper">
-                    <i class="fas fa-search"></i>
-                    <input type = "text" placeholder="Search by city or click on geolocation">
-                    <i  class="fa fa-times"></i>
+                    <i id="searchButton" class="fas fa-search"></i>
+                    <input type = "text" class="inputValue" placeholder="Search by city or click on geolocation">
+                    <i id="deleteButton"  class="fa fa-times"></i>
                 </div>
                 
             </li>
             <li class="header-item">
-                <button type="button" value="Submit" id="submitButton" />
+                <button type="button"  id="geoButton" />
                 <i class="fas fa-location-arrow"></i>
                 </button>
             </li>
@@ -54,19 +54,19 @@
         <!--- LEFT SECTION--> 
         <div class="card weather-info">
             <div class="weather-info__description">
-                Few Clouds  
+                <p>Few clouds</p>  
             </div>
             <div class="weather-info__city">
-                Gdynia
+                <p>Warsaw, PL</p>
             </div>
             <div class="weather-info__date">
-                Sunday, 15th May 2021
+                <p>Date</p>
             </div>
             <div class="weather-info__time">
-                14:05 am
+                <p>Time</p>
             </div>
             <div class="weather-info__temperature">
-                12 C
+                <p>12 °C</p>
             </div>
 
             <div class="weather-icon">
@@ -111,10 +111,10 @@
                 </div>
                 <div class="weather-details__info">
                     <div class="weather-details__label">
-                        Chance of Rain
+                        Pressure 
                     </div>
-                    <div class="weather-details__data" id="chance-of-rain">
-                        0%
+                    <div class="weather-details__data" id="pressure">
+                        <p>1000 hP</p>
                     </div>
                 </div>
             </div>
@@ -127,8 +127,8 @@
                     <div class="weather-details__label">
                         Wind Speed
                     </div>
-                    <div class="weather-details__data" id="feels-like">
-                        10 k
+                    <div class="weather-details__data" id="wind-speed">
+                        10 km /h
                     </div>
                 </div>
             </div>
