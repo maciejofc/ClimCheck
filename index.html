@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-16">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Application</title>
@@ -43,7 +43,7 @@
             <li class="header-item">
                 <div class="center">
                     <p>°C</p>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="scaleChange">
                     <p>F</p>
                 </div>
             </li>
@@ -54,19 +54,20 @@
         <!--- LEFT SECTION--> 
         <div class="card weather-info">
             <div class="weather-info__description">
-                <p>Few clouds</p>  
+               <p></p>
             </div>
             <div class="weather-info__city">
-                <p>Warsaw, PL</p>
+                <p></p>
             </div>
             <div class="weather-info__date">
-                <p>Date</p>
+                <p></p>
             </div>
             <div class="weather-info__time">
-                <p>Time</p>
+                <p></p>
             </div>
-            <div class="weather-info__temperature">
-                <p>12 °C</p>
+            
+            <div class="temperature-value weather-info__temperature">
+                <p></p>
             </div>
 
             <div class="weather-icon">
@@ -85,8 +86,9 @@
                     <div class="weather-details__label">
                         Feels Like
                     </div>
-                    <div class="weather-details__data" id="feels-like">
-                        12 C
+                    
+                    <div class="temperature-value weather-details__data" id="feels-like">
+                        
                     </div>
                 </div>
             </div>
@@ -100,7 +102,7 @@
                         Humidity
                     </div>
                     <div class="weather-details__data" id="humidity">
-                        93%
+                        
                     </div>
                 </div>
             </div>
@@ -114,7 +116,7 @@
                         Pressure 
                     </div>
                     <div class="weather-details__data" id="pressure">
-                        <p>1000 hP</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -127,8 +129,8 @@
                     <div class="weather-details__label">
                         Wind Speed
                     </div>
-                    <div class="weather-details__data" id="wind-speed">
-                        10 km /h
+                    <div class=" weather-details__data" id="wind-speed">
+                        
                     </div>
                 </div>
             </div>

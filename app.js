@@ -2,14 +2,17 @@
 const key = "98f6e44fa80bfa8537e6fdad88b5f640";
 const KELVIN = 273;
 
+//Default view
+getWeatherByCity("gdynia");
 
 //SELECT ELEMENTS
 
+
+const tempValueElements = document.querySelectorAll(".temperature-value");
+
 // HEADER SECTION
 const geoButton = document.getElementById('geoButton');
-
 const searchButton = document.querySelector("#searchButton");
-
 const deleteButton = document.querySelector("#deleteButton")
 const input = document.querySelector(".inputValue");
 // LEFT SECTION
@@ -39,7 +42,7 @@ if(today.getMinutes()<10){
 
 const weather = {};
 weather.temperature = {
-    unit : "celsius"
+    
     
 }
 weather.dateAndTime = {
@@ -48,6 +51,38 @@ weather.dateAndTime = {
 }
 
 // EVENTS
+
+
+// C to F conversion
+function celsiusToFahrenheit(temperature){
+    return (temperature * 9/5) + 32;
+}
+
+const scaleCheckBox = document.querySelector("input[name=scaleChange]");
+scaleCheckBox.addEventListener('change', function() {
+    if(this.checked) {
+        
+        let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
+        fahrenheit = Math.floor(fahrenheit);
+        
+        
+        tempValueElements.forEach(el => {
+            el.innerHTML= `${fahrenheit}°<span>F</span>`;
+        })
+
+    }
+    else {
+        tempValueElements.forEach(el => {
+            el.innerHTML= `${weather.temperature.value}°<span>C</span>`;
+        })
+        
+        
+    }
+});
+
+
+
+
 geoButton.addEventListener('click',getLocation);
 searchButton.addEventListener('click',getCity)
 deleteButton.addEventListener('click',removeText);
@@ -73,7 +108,8 @@ function getLocation(){
 function setPosition(position){
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
-    
+    console.log(longitude);
+    console.log(latitude);
     getWeatherByPosition(latitude, longitude);
 }
 
@@ -88,6 +124,7 @@ function getWeatherByPosition(latitude, longitude){
             return data;
         })
         .then(function(data){
+            console.log(data);
             weather.temperature.value = Math.floor(data.main.temp - KELVIN);
             weather.description = data.weather[0].description;
             weather.iconId = data.weather[0].icon;
@@ -151,8 +188,8 @@ function displayWeather(){
     // RIGHT SECTION
     feelsLikeElement.innerHTML = `${weather.feelsLike} °<span>C</span>`;
     humidityElement.innerHTML = `${weather.humidity} <span>%</span>`;
-    pressureElement.innerHTML = `${weather.pressure} °<span>hP</span>`;
-    windSpeedElement.innerHTML = `${weather.windSpeed} °<span>km/h</span>`;
+    pressureElement.innerHTML = `${weather.pressure} <span>hPa</span>`;
+    windSpeedElement.innerHTML = `${weather.windSpeed} <span>km/h</span>`;
     
 }
 String.prototype.capitalize = function() {
