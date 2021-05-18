@@ -51,94 +51,163 @@
     </header>
     
     <main>
-        <!--- LEFT SECTION--> 
-        <div class="card weather-info">
-            <div class="weather-info__description">
-               <p></p>
-            </div>
-            <div class="weather-info__city">
+        <div class="daily-info">
+            <!--- LEFT SECTION--> 
+            <div class="card weather-info">
+                <div class="weather-info__description">
                 <p></p>
-            </div>
-            <div class="weather-info__date">
-                <p></p>
-            </div>
-            <div class="weather-info__time">
-                <p></p>
-            </div>
-            
-            <div class="temperature-value weather-info__temperature">
-                <p></p>
-            </div>
+                </div>
+                <div class="weather-info__city">
+                    <p></p>
+                </div>
+                <div class="weather-info__date">
+                    <p></p>
+                </div>
+                <div class="weather-info__time">
+                    <p></p>
+                </div>
+                
+                <div class="temperature-value weather-info__temperature">
+                    <p></p>
+                </div>
 
-            <div class="weather-icon">
-                <img src="icons/unknown.png">
+                <div class="weather-icon">
+                    <img src="icons/unknown.png">
+                </div>
+            </div>
+        
+            
+            <!--- RIGHT SECTION--> 
+            <div class="card weather-detailed-info">
+                <div class="weather-details">
+                    <div class="weather-details__icon">
+                        <i style="font-size: 2em;" class="fas fa-temperature-low"></i>
+                    </div>
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">
+                            Feels Like
+                        </div>
+                        
+                        <div class="temperature-value weather-details__data" id="feels-like">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="weather-details__icon">
+                        <img style="width: 32px; height: 32px;" src="img/humidity.svg" alt="humidity">
+                    </div>
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">
+                            Humidity
+                        </div>
+                        <div class="weather-details__data" id="humidity">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="weather-details__icon">
+                        <i style="font-size: 2em;" class="fas fa-cloud-rain"></i>
+                    </div>
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">
+                            Pressure 
+                        </div>
+                        <div class="weather-details__data" id="pressure">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="weather-details__icon">
+                        <i style="font-size: 2em;" class="fas fa-wind"></i>
+                    </div>
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">
+                            Wind Speed
+                        </div>
+                        <div class=" weather-details__data" id="wind-speed">
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-       
-        
-        <!--- RIGHT SECTION--> 
-        <div class="card weather-detailed-info">
-            <div class="weather-details">
-                <div class="weather-details__icon">
-                    <i style="font-size: 2em;" class="fas fa-temperature-low"></i>
-                </div>
-                <div class="weather-details__info">
-                    <div class="weather-details__label">
-                        Feels Like
-                    </div>
+
+        <div class="forecast">
+            
+            <table class="table">
+                <thead>
+                    <th>DAY</th>
                     
-                    <div class="temperature-value weather-details__data" id="feels-like">
+                    <th id="imgRemove">img</th>
+                    <th>CHANCE OF RAIN</th>
+                    <th>HUMIDITY</th>
+                    <th>TEMPERATURE</th>
+                    
+                </thead>
+                <tbody>
+                    <tr>
                         
-                    </div>
-                </div>
-            </div>
-
-            <div class="weather-details">
-                <div class="weather-details__icon">
-                    <img style="width: 32px; height: 32px;" src="img/humidity.svg" alt="humidity">
-                </div>
-                <div class="weather-details__info">
-                    <div class="weather-details__label">
-                        Humidity
-                    </div>
-                    <div class="weather-details__data" id="humidity">
+                        <td id="day1" data-label="DAY">Wednesday</td>
+                        <td  id="img1" data-label="img"></td>
+                        <td id="chance1" data-label="CHANCE OF RAIN"></td>
+                        <td id="humidity1" data-label="HUMIDITY"></td>
+                        <td class="temperature-value" id="temp1" data-label="TEMPERATURE"></td>
                         
-                    </div>
-                </div>
-            </div>
+                    </tr>
+                    <tr>
+                        <td id="day2" data-label="DAY">Wednesday</td>
+                        <td id="img2" data-label="img"></td>
+                        <td id="chance2" data-label="CHANCE OF RAIN"></td>
+                        <td id="humidity2" data-label="HUMIDITY"></td>
+                        <td class="temperature-value" id="temp2" data-label="TEMPERATURE"></td>
+                    </tr>
+                    <tr>
+                        <td id="day3" data-label="DAY">Wednesday</td>
+                        <td id="img3" data-label="img"></td>
+                        <td id="chance3" data-label="CHANCE OF RAIN"></td>
+                        <td id ="humidity3" data-label="HUMIDITY"></td>
+                        <td class="temperature-value" id="temp3" data-label="TEMPERATURE"></td>
+                    </tr>
+                    <tr>
+                        <td id="day4" data-label="DAY"></td>
+                        <td id="img4" data-label="img"></td>
+                        <td id="chance4" data-label="CHANCE OF RAIN"></td>
+                        <td id ="humidity4" data-label="HUMIDITY"></td>
+                        <td class="temperature-value"  id="temp4" data-label="TEMPERATURE"></td>
+                    </tr>
+                    <tr>
+                        <td id="day5" data-label="DAY">Wednesday</td>
+                        <td  id="img5" data-label="img">img</td>
+                        <td  id="chance5" data-label="CHANCE OF RAIN"></td>
+                        <td  id="humidity5" data-label="HUMIDITY"></td>
+                        <td class="temperature-value"  id="temp5" data-label="TEMPERATURE"></td>
+                    </tr>
+                    <tr>
+                        <td id="day6" data-label="DAY">Wednesday</td>
+                        <td id="img6" data-label="img">img</td>
+                        <td id="chance6" data-label="CHANCE OF RAIN"></td>
+                        <td id="humidity6" data-label="HUMIDITY"></td>
+                        <td class="temperature-value" id="temp6" data-label="TEMPERATURE"></td>
+                    </tr>
+                    <tr>
+                        <td  id="day7" data-label="DAY">Wednesday</td>
+                        <td id="img7" data-label="img">img</td>
+                        <td id="chance7" data-label="CHANCE OF RAIN"></td>
+                        <td id="humidity7" data-label="HUMIDITY"></td>
+                        <td class="temperature-value" id="temp7" data-label="TEMPERATURE"></td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <div class="weather-details">
-                <div class="weather-details__icon">
-                    <i style="font-size: 2em;" class="fas fa-cloud-rain"></i>
-                </div>
-                <div class="weather-details__info">
-                    <div class="weather-details__label">
-                        Pressure 
-                    </div>
-                    <div class="weather-details__data" id="pressure">
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="weather-details">
-                <div class="weather-details__icon">
-                    <i style="font-size: 2em;" class="fas fa-wind"></i>
-                </div>
-                <div class="weather-details__info">
-                    <div class="weather-details__label">
-                        Wind Speed
-                    </div>
-                    <div class=" weather-details__data" id="wind-speed">
-                        
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
-    <div class="forecast">
-        
-    </div>
+    
     <script src="app.js"></script>
 </body>
 </html>
