@@ -6,18 +6,12 @@
 
 body {
   font-family: "Lora", serif;
-  background-image: linear-gradient(
-    to right top,
-    #f2f5f9,
-    #d9eeff,
-    #b7e9ff,
-    #8de5ff,
-    #55e1f6
-  );
+  color: var(--fontColor);
+  background-color: var(--mainBg);
 }
 
 .header-list {
-  background: #f5fbef;
+  background: var(--headerBg);
   display: flex;
   height: 100px;
   padding: 2rem 0;
@@ -83,38 +77,24 @@ input:checked[type="checkbox"]:before {
 .wrapper {
   display: flex;
   align-items: center;
-  background-image: linear-gradient(
-    to right top,
-    #8fe7f9,
-    #8deef6,
-    #8ff4f0,
-    #97fae8,
-    #a3ffdf
-  );
+  background-color: var(--searchBg);
   height: 2.5rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  color: black;
-  box-shadow: 0.25rem 0.25rem 1rem grey;
+  box-shadow: 0.25rem 0.25rem 1rem var(--boxShadowColor);
+}
+.inputValue {
+  color: var(--fontColor);
 }
 input {
   margin: 0 0.5rem;
   width: 100%;
   border: none;
   outline: none;
-
-  background-image: linear-gradient(
-    to right top,
-    #8fe7f9,
-    #8deef6,
-    #8ff4f0,
-    #97fae8,
-    #a3ffdf
-  );
-  color: black;
+  background-color: var(--searchBg);
 }
 ::placeholder {
-  color: grey;
+  color: var(--placeholderColor);
 }
 
 .daily-info {
@@ -172,22 +152,12 @@ input {
 .card {
   width: 350px;
   height: 550px;
-  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
-  background-image: linear-gradient(
-    to right top,
-    #63c4d8,
-    #7dc8eb,
-    #9cccf8,
-    #bdcefe,
-    #dbd1ff
-  );
+  background-image: var(--cardImage);
   padding: 2rem;
-  color: black;
   box-shadow: 20px 20px rgba(0, 0, 0, 0.15);
   transition: all 0.4s ease;
 }
 .card:hover {
-  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
 }
 button {
@@ -199,33 +169,38 @@ button {
   cursor: pointer;
   outline: inherit;
 }
+
 .table {
+  border-collapse: collapse;  
   margin: 10rem auto;
   width: 85%;
-  border-collapse: collapse;
+  border: 1px solid var(--mainBg);
+  border-radius: 5px;
 }
 .table th {
-  font-size: 1.15rem;
-  padding: 1.2rem 1.5rem;
-  border: 1px solid black;
+  background-color: var(--thCellColor) ;
+  font-size: 1.4rem;
+  padding: 1.2rem 1.35rem;
+  
   text-align: center;
 }
 .table td {
   padding: 0.6rem 0.8rem;
-  border: 1px solid black;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 .table tbody tr:nth-child(even) {
-  background-color: #f5f5f5;
+  background-color: var(--tdOddColor);
 }
+
 
 .imgIcon {
   height: 3rem;
   width: 3rem;
 }
 #imgRemove {
-  opacity: 0;
+  font-size: 0px;
+  
 }
 
 /*RESPONSIVEE*/
@@ -295,4 +270,63 @@ button {
     text-align: center;
     padding: 0;
   }
+}
+:root {
+  /* white to black */
+  --white1: #ffffff;
+  --white2: #fbfbfb;
+  --white3: #f2f2f2;
+  --white4: #ebebeb;
+  --white5: #e4e3e2;
+  --white6: #cdcecd;
+  --white7: #bfc1c0;
+  --white8: #8a8a8a;
+  /* white to black */
+  --black8: #6e6e6e;
+  --black7: #4f4f50;
+  --black6: #434444;
+  --black5: #373737;
+  --black4: #2e2e2e;
+  --black3: #222222;
+  --black2: #141414;
+  --black1: #000000;
+
+  /* light blue to blue */
+    --blue1: #E5F0F9;
+    --blue2: #D8E7F8;
+    --blue3: #B1CEF0;
+    --blue4: #8AB6E9;
+    --blue5: #67A9ED;
+
+  --darkerblue5:#1E63B8;
+  --darkerblue4:#325A9F;
+  --darkerblue3:#2F5392;
+  --darkerblue2:#2A487F;
+  --darkerblue1 :#013D63;
+
+}
+
+.light-theme {
+  --fontColor: var(--black1);
+  --headerBg: var(--white2);
+  --mainBg: var(--white3);
+  --iconColor: var(--black1);
+  --searchBg: var(--blue1);
+  --placeholderColor: var(--black6);
+  --boxShadowColor: var(--white7);
+  --thCellColor : var(--blue2);
+  --tdOddColor : var(--white4);
+  --cardImage : linear-gradient(to right top, var(--blue1), var(--blue2),var(--blue3),var(--blue4));
+}
+.dark-theme {
+  --fontColor: var(--white1);
+  --headerBg: var(--black2);
+  --mainBg: var(--black3);
+  --iconColor: var(--white1);
+  --searchBg: var(--darkerblue1);
+  --placeholderColor: var(--white6);
+  --boxShadowColor: var(--black7);
+  --thCellColor : var(--darkerblue2);
+  --tdOddColor : var(--black4);
+  --cardImage : linear-gradient(to right top, var(--blue4), var(--darkerblue1),var(--darkerblue2),var(--darkerblue5));
 }

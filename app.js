@@ -11,6 +11,10 @@ getWeatherByCity("gdynia");
 const tempValueElements = document.querySelectorAll(".temperature-value");
 
 // HEADER SECTION
+const themeSwitch = document.querySelector("input[name=themeSwitch]");
+themeSwitch.addEventListener('change',function (){
+  document.body.classList.toggle('dark-theme');
+})
 const scaleCheckBox = document.querySelector("input[name=scaleChange]");
 const geoButton = document.getElementById("geoButton");
 const searchButton = document.querySelector("#searchButton");
@@ -35,6 +39,7 @@ const pressureElement = document.getElementById("pressure");
 const windSpeedElement = document.getElementById("wind-speed");
 
 //App data
+
 let today = new Date();
 let date =
   today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
@@ -52,31 +57,6 @@ weather.dateAndTime = {
   date: date,
   time: time,
 };
-
-// EVENTS
-scaleCheckBox.addEventListener("change", function () {
-  if (this.checked) {
-    tempValueElements.forEach((el) => {
-      let str = el.textContent;
-      str = str.substring(0, str.indexOf("°")).trim();
-      let number = parseInt(str);
-      console.log(z + " " + el.textContent);
-      let fahrenheit = celsiusToFahrenheit(number);
-
-      el.innerHTML = `${fahrenheit}°<span>F</span>`;
-      z++;
-    });
-  } else {
-    tempValueElements.forEach((el) => {
-      let str = el.textContent;
-      str = str.substring(0, str.indexOf("°")).trim();
-      let number = parseInt(str);
-      console.log(z + " " + el.textContent);
-      let celsius = FahrenheitToCelsius(number);
-      el.innerHTML = `${celsius}°<span>C</span>`;
-    });
-  }
-});
 
 // Fraction to percentage conversion
 function toPercentage(number) {
@@ -106,6 +86,32 @@ function celsiusToFahrenheit(temperature) {
   return (temperature * 9) / 5 + 32;
 }
 
+
+// EVENTS
+scaleCheckBox.addEventListener("change", function () {
+  if (this.checked) {
+    tempValueElements.forEach((el) => {
+      let str = el.textContent;
+      str = str.substring(0, str.indexOf("°")).trim();
+      let number = parseInt(str);
+      
+      let fahrenheit = celsiusToFahrenheit(number);
+
+      el.innerHTML = `${fahrenheit}°<span>F</span>`;
+      
+    });
+  } else {
+    tempValueElements.forEach((el) => {
+      let str = el.textContent;
+      str = str.substring(0, str.indexOf("°")).trim();
+      let number = parseInt(str);
+      
+      let celsius = FahrenheitToCelsius(number);
+      el.innerHTML = `${celsius}°<span>C</span>`;
+    });
+  }
+});
+
 geoButton.addEventListener("click", getLocation);
 searchButton.addEventListener("click", getCity);
 deleteButton.addEventListener("click", removeText);
@@ -125,15 +131,12 @@ function getLocation() {
   } else {
     alert("Browser doesn't Support Geolocation");
   }
-  console.log("clicked");
 }
 
 // SET USER'S POSITION
 function setPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  console.log(longitude);
-  console.log(latitude);
   getWeatherByPosition(latitude, longitude);
   getForecast();
 }
