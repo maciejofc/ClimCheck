@@ -16,38 +16,43 @@
 <body class="light-theme">
     <header>
         
-        <ul class="header-list">
-            <li class="header-item">
-                LOGO
-            </li>
-            <li class="header-item">
-                <div class="wrapper">
+        <nav>
+            <div id="logo" class="header-item">
+                ClimC<b style="color:blue">h</b>eck
+            </div>
+            
+            <div class="search-item">
+                <div class="search-bar">
                     <i id="searchButton" class="fas fa-search"></i>
                     <input type = "text" class="inputValue" placeholder="Search by city or click on geolocation">
                     <i id="deleteButton"  class="fa fa-times"></i>
                 </div>
                 
-            </li>
-            <li class="header-item">
-                <button type="button"  id="geoButton" />
-                <i class="fas fa-location-arrow"></i>
-                </button>
-            </li>
-            <li class="header-item">
-                <div class="center">
-                    <i style="font-size: 1.3em;" class="fas fa-sun"></i>
-                    <input type="checkbox" name="themeSwitch">
-                    <i style ="font-size: 1.3em;"class="fas fa-moon"></i>
-                </div>
-            </li>
-            <li class="header-item">
-                <div class="center">
-                    <p>°C</p>
-                    <input type="checkbox" name="scaleChange">
-                    <p>F</p>
-                </div>
-            </li>
-        </ul>
+            </div>
+
+            <ol>
+                <li class="header-item">
+                    <button type="button"  id="geoButton" />
+                    <i class="fas fa-location-arrow"></i>
+                    </button>
+                </li>
+                <li class="header-item switch-boxes">
+                    <div class="switch-box">
+                        <i style="font-size: 1.3em;" class="fas fa-sun"></i>
+                        <input type="checkbox" name="themeSwitch">
+                        <i style ="font-size: 1.3em;"class="fas fa-moon"></i>
+                    </div>
+                </li>
+                <li class="header-item switch-boxes">
+                    <div class="switch-box">
+                        <p>°C</p>
+                        <input type="checkbox" name="scaleChange">
+                        <p>F</p>
+                    </div>
+                </li>
+            </ol>
+           
+        </nav>
     </header>
     
     <main>
