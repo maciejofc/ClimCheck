@@ -44,7 +44,7 @@ nav ol li {
 }
 nav ol li:nth-child(3) {
   margin: 0 2px;
-  border:none;
+  border: none;
 }
 .search-item {
   flex-basis: 80%;
@@ -59,12 +59,8 @@ nav ol li:nth-child(3) {
   box-shadow: 0.25rem 0.25rem 1rem var(--boxShadowColor);
 }
 
-
-
 @media screen and (max-width: 878px) {
-
 }
-
 
 input[type="checkbox"] {
   position: relative;
@@ -230,14 +226,19 @@ button {
     display: flex;
     flex-direction: column;
     padding: 0;
-    height: 180px;
+    height: 170px;
     gap: 2%;
     align-items: center;
   }
+  .search-item {
+    flex-basis: 35%;
+  }
+
   nav ol {
     margin-top: 0.2rem;
     border-top: 1px solid grey;
     padding: 1rem 0;
+    flex-basis: 47%;
   }
   nav ol li {
     margin: 0;
